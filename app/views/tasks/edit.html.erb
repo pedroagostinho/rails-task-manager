@@ -1,0 +1,18 @@
+<br>
+<h2><%= @task.title.capitalize %></h2>
+<div>
+  <%= form_for @task do |form| %>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+    <br>
+    <%= form.label :details %>
+    <%= form.text_field :details, :size => 150 %>
+    <br>
+    <%= form.label :completed %>
+    <%= form.check_box :completed %>
+    <br>
+    <%= form.submit %>
+  <% end %>
+  <%#= render 'form' %>
+</div>
+

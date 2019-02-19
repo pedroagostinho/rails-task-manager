@@ -1,0 +1,18 @@
+<br>
+<h2>Tasks:</h2>
+<div>
+  <ul style="list-style-type:none;">
+    <% @tasks.each do |task| %>
+      <% if task.completed == nil || task.completed == false %>
+      <% comp = "far fa-circle" %>
+      <% elsif task.completed == true %>
+      <% comp = "fas fa-check-circle" %>
+      <% end %>
+      <li><i class="<%= comp %>"></i> <%= link_to(task.title.capitalize, task_path(task)) %> | <%= link_to("edit", edit_task_path(task)) %> | <%= link_to('<i class="fas fa-trash-alt delete"></i>'.html_safe, task_path(task), method: :delete) %></li><br>
+    <% end %>
+  </ul>
+</div>
+<br>
+<div>
+  <%= link_to("Add a new task", new_task_url) %>
+</div>
