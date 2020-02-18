@@ -2,20 +2,27 @@
 <h2><%= @task.title.capitalize %></h2>
 <div>
   <ul style="list-style-type:none;">
-    <li><p><strong>Details:</strong></p></li>
-    <li><p><%= @task.details %></p></li>
+    <li>
+      <p><strong>Details:</strong></p>
+    </li>
+    <li>
+      <p><%= @task.details %></p>
+    </li>
   </ul>
 </div>
 <div>
   <ul style="list-style-type:none;">
-    <% if @task.completed == nil || @task.completed == false %>
+  <% if @task.completed == nil || @task.completed == false %>
     <% comp = "far fa-circle" %>
     <% message = "This task is not completed yet" %>
-    <% elsif @task.completed == true %>
+  <% elsif @task.completed == true %>
     <% comp = "fas fa-check-circle" %>
     <% message = "This task is completed" %>
-    <% end %>
-    <li><i class="<%= comp %>"></i> <%= message %></li><br>
+  <% end %>
+    <li>
+      <i class="<%= comp %>"></i> <%= message %>
+    </li>
+    <br>
   </ul>
 </div>
 <br>
