@@ -13,7 +13,7 @@
       <i class="<%= comp %>"></i>
       <%= link_to(task.title.capitalize, task_path(task)) %> |
       <%= link_to("edit", edit_task_path(task)) %> |
-      <%= link_to('<i class="fas fa-trash-alt delete"></i>'.html_safe, task_path(task), method: :delete) %>
+      <%= link_to('<i class="fas fa-trash-alt delete"></i>'.html_safe, task_path(task), method: :delete, data: {confirm: "Delete #{task.title.capitalize}?"}) %>
     </li>
     <br>
   <% end %>
